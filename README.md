@@ -139,8 +139,9 @@ Exception predicted by the programmer, and it will handle at compile time.
 
 ### Checked Exception: -
 Exception it will check at run time error.
-It is comparable to handling check exceptions at the compiler.
-Compiler tails it may be possible to come error at run time that the file has not found an exception, so it is comparable to handling check exception.
+It is comparable to handle check exceptions in the compiler.
+Compiler tails it may be possible to come error at run time that the file has not found an exception,
+so it is comparable to handle check exception.
 We can handle check exceptions in two ways
 1. Using Try Catch Block
 2. Using throws keyword.
