@@ -145,7 +145,7 @@ We can handle check exception in two ways
 1. Using Try Catch Block
 2. Using throws keyword.
 
-### Example:-
+#### Example:-
 // Using Try-Catch Block
 ``` 
 try {
@@ -188,11 +188,11 @@ Can access outside the class
 > It is used to provide a mechanism to convert primitive into object and object into primitive.   
 > It has two types
 
-1.Autoboxing 
+### 1.Autoboxing 
 >Primitive to object       
 >The automatic conversion of a primitive data type into its corresponding wrapper class
 
-2.Unboxing
+### 2.Unboxing
 >Object to primitive
 
 ### uses
@@ -212,8 +212,91 @@ int i = a.intValue(); //Explicit
 
 ![Screenshot 2024-04-03 091946.png](Screenshot%202024-04-03%20091946.png)
 
----
-    
+>Object or variable of a string class will never be changed even if you contact replace trim or any operation to it To save the updated screen after these operations You need to create another variable or object of the string class.
+
+### example of string class methods
+``` 
+// length()
+"Nimesh".length();  // returns 6
+
+// charAt()
+"Nimesh".charAt(3); // returns  ‘m’
+
+// contains
+"nim".concat("esh"); // returns “nimesh”
+
+// replace
+String s1 = “Nimesh“;
+String s2 = “Nimesh”.replace(‘N’ ,’g’); // returns “gimesh”
+
+// equals
+“Nimesh”.equals(“Nimesh”); // returns true
+“Nimesh”.equals(“nimesh”); // returns false
+
+// equalsIgnoreCase
+“Nimesh”.equalsIgnoreCase(“Nimesh”); // returns true
+“Nimesh”.equalsIgnoreCase(“nimesh”); // returns true
+
+// ___.toLowerCase();
+"NiMeSh".toLowerCase(); // return "nimesh"
+
+// ___.toUpperCase();
+"nImEsH".toUpperCase(); // return "NIMESH"
+
+--- For advance ---
+
+// substring()
+"Nimesh".substring(3); // returns “mesh”
+"nimesh".substring(2, 5); // returns “mes” == [2,5)
+// 2 is inclusive and 5 is exclusive
+
+//index of
+String s = ”Learn Share Learn”;
+int output = s.indexOf(“Share”); // returns 6
+// return -1 if it can't find it 
+// if we put location > length then it generate IndexOutOfBounds exception 
+```
+
+### Difference between string vs stringBuffer vs stringBuilder
+![string_VS_stringBuffer_VS_stringBuilder.png](string_VS_stringBuffer_VS_stringBuilder.png)
+
+### Difference between string vs stringBuffer
+![string_vs_stringBuffer.png](string_vs_stringBuffer.png)
+we can convert a string class object in to a string buffer object to access the method string buffer class,
+but we can't directly pass a string to a string buffer object.
+
+#### string:
+* string needs to be explicitly type case to use string buffer
+* we can use a string class to declare a variable directly
+
+#### stringBuffer
+* string buffer can use the string class methods directly
+* you commissary need an object to initialize the string in a stringBuffer calls
+
+### String Buffer Methods
+![stringBuffer_methods.png](stringBuffer_methods.png)
+
+#### Example:
+``` 
+StringBuffer sb = new StringBuffer("Hello");
+
+sb.append(" World !"); // now sb = "Hello World"
+
+sb.reverse(); // now sb = "dlroW olleH"
+
+sb.length(); // return = 11
+
+sb.insert(1,"java"); // return = "djavalroW olleH" //insert before the index (Won't delete)
+
+sb.replace(1,5,""); // return = "dlroW olleH" // insert at the index (delete it)
+
+sb.delete(0,5);// return = " olleH"
+
+// when we creaet a string buffer object it allocate some capacity = 16
+sb.capacity(); // return = 21 + length == 
+
+```
+
 ### character
 * the character syntax to declare char value is '#'
 * primitive
