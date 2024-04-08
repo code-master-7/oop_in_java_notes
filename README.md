@@ -392,3 +392,24 @@ class TestClass implements In1
 OUTPUT: 
     hello
 ```
+
+## Instance of operator in java
+* this operator returns either true or false, and hence is majorly used in conditional statements
+* it is used to check whether a given object belongs to a particular class or not 
+* an object of subclass is also an instanceof parent class
+``` 
+class Parent {
+}
+class Child extends Parent {
+} 
+class Test {
+    public static void main(String[] args)
+    {
+        Parent pobj = new Parent();
+        if (pobj instanceof Child)
+            System.out.println("pobj is instance of Child");
+        else
+            System.out.println("pobj is NOT instance of Child");
+    }
+}
+```
