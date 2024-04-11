@@ -1,5 +1,4 @@
 # JAVA
----
 
 ## Understanding the Java Ecosystem: JDK, JRE, and JVM
 
