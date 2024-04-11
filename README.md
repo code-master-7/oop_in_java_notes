@@ -1,8 +1,60 @@
-
-access_specifier static/nonstatic return type method_name(Arguments)
+# JAVA
 ---
 
+## Understanding the Java Ecosystem: JDK, JRE, and JVM
+
+### Java Development Kit (JDK)
+
+*   **Definition:** The JDK is a comprehensive software development kit that provides everything you need to develop, debug, and run Java applications.
+*   **Components:**
+    *   **Java Runtime Environment (JRE):** Used to run Java applications.
+    *   **Development Tools:**
+        *   **javac:** Java compiler to convert Java source code into bytecode.
+        *   **java:** Java interpreter to execute Java bytecode.
+        *   **jar:** Utility for packaging Java classes into JAR (Java Archive) files.
+        *   **javadoc:** Generates API documentation from Java source code.
+        *   **Debugger:** Helps identify and fix errors in your code.
+*   **Who needs it?:** Anyone who wants to develop Java applications.
+
+### Java Runtime Environment (JRE)
+
+*   **Definition:** The JRE is a software environment that provides the minimum requirements for running compiled Java applications.
+*   **Components:**
+    *   **Java Virtual Machine (JVM):** Interprets and executes Java bytecode.
+    *   **Core Libraries:** Provides essential functionalities like input/output, networking, and collections.
+*   **Who needs it?:** Anyone who wants to run Java applications on their system.
+
+### Java Virtual Machine (JVM)
+
+*   **Definition:** The JVM is an abstract computing machine that enables a computer to run Java programs. It is the core component of the JRE and is responsible for interpreting and executing Java bytecode.
+*   **Key Features:**
+    *   **Platform Independence:** Allows Java applications to run on any system with a compatible JVM, regardless of the underlying operating system. (Write Once, Run Anywhere)
+    *   **Automatic Memory Management:** Handles memory allocation and reallocation, reducing the risk of memory leaks.
+    *   **Security:** Provides a secure environment for running Java applications.
+*   **Who needs it?:** Developers don't directly interact with the JVM. It's automatically used when running Java applications through the JRE.
+
+### Relationship between JDK, JRE, and JVM
+*   **JDK:** Contains the JRE and additional development tools.
+*   **JRE:** Contains the JVM and core libraries needed to run Java applications.
+*   **JVM:** The core component of the JRE that executes Java bytecode.
+
+### Summary
+
+*   **Develop Java Applications:** Use the JDK.
+*   **Run Java Applications:** Use the JRE.
+*   **Execute Java Bytecode:** The JVM does this within the JRE.
+
+### Difference 
+
+| Component                          | Description                                                               | Includes                                           |
+|------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------|
+| **JDK (Java Development Kit)**     | A complete development environment for building Java applications.        | JRE + Development tools (compiler, debugger, etc.) |
+| **JRE (Java Runtime Environment)** | Provides the minimum requirements for running compiled Java applications. | JVM + Core libraries (e.g., java.lang, java.util)  |
+| **JVM (Java Virtual Machine)**     | Interprets and executes Java bytecode, providing platform independence.   | -                                                  | 
+
+---
 ## Functions
+
 ### Types of functions: -
 * No Return type—No Argument++
 * With Return type—No Argument
@@ -41,22 +93,18 @@ c2 = c;
 ---
 
 ### Difference between Method and construction
+| Method                                                                                                    | Constructor                                                                             |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| User can decide The method name.                                                                          | Construction name and class name should be the same.                                    |
+| Method needs to be explicitly called.                                                                     | The construction is called implicitly during the object creation.                       |
+| Method has a return type.                                                                                 | Construction has no return type.                                                        |
+| We can call a method in the constructor.                                                                  | You cannot call the constructor inside the constructor.                                 |
+| When the method has the same name, it is method overloading we need to change the return type/parameters. | In construction, overloading with only different parameters.                            |
+| A method is used to expose behaviour of object                                                            | it is used to initialize state of object                                                |
+| It is not provided by compiler in any case                                                                | java compiler provides a default constructor if you don't have any constructor in class |
+| They are inherited by subclass                                                                            | they are not inherited by subclass                                                      |
+| The constructor is never static or final                                                                  | A method can be static or final                                                         |
 
-#### Method:-
-* User can decide The method name.
-* Method needs to be explicitly called.
-* Method has a return type.
-* We can call a method in the constructor.
-* When the method has the same name, it is method overloading we need to change the return type/parameters.
-
-#### Constructor:-
-* Construction name and class name should be the same.
-* The construction is called implicitly during the object creation.
-* Construction has no return type.
-* You cannot call the constructor inside the constructor.
-* In construction, overloading with only different parameters.
-* Non-parameter constructor is not Always default construction.
-* Every default constructor should be non-parameter.
 ---
 
 ## Exception :-
@@ -110,13 +158,14 @@ Virtual matching error, Stack Overflow, Out of Memory error, etc.
 1. IO Exception
 2. SQLException
 3. ClassNotFoundException
-4. RuntimeException: -
-5. ArithmeticException
-6. NullPointerException
-7. NumberFormetException
-8. IndexOutOfBoundException
-9. StringIndexException
-10. ETC...
+4. RuntimeException:—      
+     1. ArithmeticException   
+     2. NullPointerException   
+     3. NumberFormetException       
+     4. StringIndexException
+     5. IndexOutOfBoundException  
+        1) ArrayIndexOutOfBounds
+        2) StringIndexOutOfBounds
 
 ### WRITE A PROGRAM USING MULTIPLE CATCH BLOCKS.
 
@@ -175,26 +224,34 @@ try {
 
 ---
 ## Access modifiers
-### Private
-Can't access it outside the class,    
-we need to get help from public modifiers to access it!
 
-### Public
-Can access outside the class
+
+| Access Modifier                 | Class | Package | Subclass | World | Description                                                                                                                     |
+|---------------------------------|-------|---------|----------|-------|---------------------------------------------------------------------------------------------------------------------------------|
+| `public`                        | Yes   | Yes     | Yes      | Yes   | Accessible from anywhere. There are no restrictions on access.                                                                  |
+| `protected`                     | Yes   | Yes     | Yes      | No    | Accessible within the same class, package, and subclasses (even if the subclass is in a different package).                     |
+| `no modifier` (package-private) | Yes   | Yes     | No       | No    | Accessible within the same class and package, but not from subclasses or outside the package.                                   |
+| `private`                       | Yes   | No      | No       | No    | Accessible only within the same class. Not accessible from anywhere else, including subclasses or even within the same package. |
 
 ---
 ## Wrapper Class
-> Java support-only calls by value, so we use a wrapper class.    
-> Used to create a Reference of a variable.   
-> It is used to provide a mechanism to convert primitive into object and object into primitive.   
-> It has two types
+* Java support-only calls by value, so we use a wrapper class.    
+* Used to create a Reference of a variable.   
+* It is used to provide a mechanism to convert primitive into object and object into primitive.   
+* It has two types
+  1. Autoboxing
+  2. Unboxing
 
-### 1. Autoboxing
->Primitive to object       
->The automatic conversion of a primitive data type into its corresponding wrapper class
+| Feature             | Autoboxing                                                                                          | Unboxing                                                                                          |
+|---------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| **Definition**      | Automatic conversion of primitive types to their corresponding wrapper objects.                     | Automatic conversion of wrapper objects to their corresponding primitive types.                   |
+| **Process**         | The compiler implicitly creates a wrapper object for the primitive type.                            | The compiler implicitly extracts the primitive value from the wrapper object.                     |
+| **Example**         | `int i = 10; Integer obj = i;`                                                                      | `Integer obj = 10; int i = obj;`                                                                  |
+| **Purpose**         | Simplifies code by eliminating the need to explicitly create wrapper objects.                       | Allows direct use of primitive values from wrapper objects without explicit conversion.           |
+| **Performance**     | May introduce slight overhead due to object creation.                                               | Generally more efficient than explicit casting.                                                   |
+| **Usage Scenarios** | - Collections (which require objects) - Generics - Method parameters/return types requiring objects | - Arithmetic operations - Assignments to primitive variables - Comparisons using primitive values |
 
-### 2.Unboxing
->Object to primitive
+> **Note:** While autoboxing and unboxing provide convenience, it's essential to be mindful of potential performance implications and null values when working with wrapper objects.
 
 ### uses
 1. Change the value in the method
@@ -211,7 +268,37 @@ int i = a.intValue(); //Explicit
 ```
 ### method in a string wrapper class
 
-![Screenshot 2024-04-03 091946.png](Screenshot%202024-04-03%20091946.png)
+
+| No. | Method                                                                                | Description                                                          |
+|-----|---------------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| 1   | char charAt(int index)                                                                | It returns char value for the particular index.                      |
+| 2   | int length()                                                                          | It returns string length                                             |
+| 3   | static String format(String format, Object... args)                                   | It returns a formatted string                                        |
+| 4   | static String format(Locale I, String format, Object... args)                         | It returns formatted string with given locale.                       |
+| 5   | String substring(int beginIndex)                                                      | It returns substring for given begin index.                          |
+| 6   | String substring(int beginIndex, int endIndex)                                        | It returns substring for given begin index and end index.            |
+| 7   | boolean contains(CharSequence s)                                                      | It returns true or false after matching the sequence of char value.  |
+| 8   | static String join(CharSequence delimiter, CharSequence... elements)                  | It returns a joined string                                           |
+| 9   | static String join(CharSequence delimiter, Iterable<? extends CharSequence> elements) | It return joined String                                              | 
+| 10  | boolean equals(Object another)                                                        | It checks the equality of string with the given object.              |
+| 11  | boolean isEmpty()                                                                     | It checks if string is empty.                                        |
+| 12  | String concat(String str)                                                             | It concatenates the specified string.                                | 
+| 13  | String replace(char old, char new)                                                    | It replaces all occurrences of the specified char value.             | 
+| 14  | String replace(CharSequence old, CharSequence new)                                    | It replaces all occurrences of the specified CharSequence.           | 
+| 15  | static String equalsIgnoreCase(String another)                                        | It compares another string. It doesn't check case.                   |
+| 16  | String[] split(String regex)                                                          | It returns a split string matching regex.                            |
+| 17  | String[] split(String regex, int limit)                                               | It returns a split string matching regex and limit.                  |
+| 18  | int indexOf(int ch)                                                                   | It returns the specified char value index.                           |
+| 19  | int indexOf(int ch, int fromIndex)                                                    | It returns the specified char value index starting with given index. | 
+| 20  | int indexOf(String substring)                                                         | It returns the specified substring index.                            | 
+| 21  | int indexOf(String substring, int fromIndex)                                          | It returns the specified substring index starting with given index.  |
+| 22  | String toLowerCase()                                                                  | It returns a string in lowercase.                                    | 
+| 23  | String toLowerCase(Locale I)                                                          | It returns a string in lowercase using specified locale.             |
+| 24  | String toUpperCase()                                                                  | It returns a string in uppercase.                                    | 
+| 25  | String toUpperCase(Locale I)                                                          | It returns a string in uppercase using specified locale.             |
+| 26  | String trim()                                                                         | It removes beginning and ending spaces of this string.               |
+| 27  | static String valueOf(int value)                                                      | It converts given type into string. It is an overloaded method.      | 
+
 
 > The object or variable of a string class will never be changed even if you contact replace trim or any operation to it To save the updated screen after these operations You need to create another variable or object of the string class.
 
@@ -258,24 +345,35 @@ int output = s.indexOf(“Share”); // returns 6
 // if we put location > length then it generate IndexOutOfBounds exception 
 ```
 
-### Difference between string vs stringBuffer vs stringBuilder
-![string_VS_stringBuffer_VS_stringBuilder.png](string_VS_stringBuffer_VS_stringBuilder.png)
+---
 
 ### Difference between string vs StringBuffer
-![string_vs_stringBuffer.png](string_vs_stringBuffer.png)
-we can convert a string class object into a string buffer object to access the method string buffer class,
-but we can't directly pass a string to a string buffer object.
+| String                                                                                                                                                                        | String Buffer                                                                                                  |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| The string class objects are immutable.                                                                                                                                       | The string Buffer class objects are mutable.                                                                   |
+| String Class objects holds its string length you can not change its size.                                                                                                     | In StringBuffer Class objects you can change its size.                                                         |
+| You can concat the string string with other string and replace the characters of the string at a given position but you can not insert a character sequence amidst the string | You can insert a character sequence in a string buffer object retaining the original characters in the string. |
+| You can not delete any character from a string class object.                                                                                                                  | You can delete any character from a string Buffer class object which also adjust the …                         |
+| String class object need to be type case explicitly to use string Buffer class methods                                                                                        | String Buffer class object can use string class methods directly                                               |
+| You don't need a any object to initialize a variable.                                                                                                                         | You comparably need a object to initialize a variable.                                                         |
 
-#### string:
-* string needs to be explicitly typed case to use a string buffer
-* we can use a string class to declare a variable directly
-
-#### StringBuffer
-* string buffer can use the string class methods directly
-* your commissary needs an object to initialize the string in a StringBuffer calls
+> You can convert a string class object into a string buffer object to access the methods of string buffer class. You cannot directly pass a string to a string buffer object.
 
 ### String Buffer Methods
-![stringBuffer_methods.png](stringBuffer_methods.png)
+
+| Methods          | Action Performed                                                            |
+|------------------|-----------------------------------------------------------------------------|
+| append()         | Used to add text at the end of the existing text.                           |
+| length()         | The length of a StringBuffer can be found by the length() method            |
+| capacity()       | the total allocated capacity can be found by the capacity() method          |
+| charAt()         | This method returns the char value in this sequence at the specified index. |
+| delete()         | Deletes a sequence of characters from the invoking object                   |
+| deleteCharAt()   | Deletes the character at the index specified by the loc                     |
+| ensureCapacity() | Ensures capacity is at least equal to the given minimum.                    |
+| insert()         | Inserts text at the specified index position                                |
+| length()         | Returns the length of the string                                            |
+| reverse()        | Reverse the characters within a StringBuffer object                         |
+| replace()        | Replace one set of characters with another set inside a StringBuffer object | 
 
 #### Example:
 ``` 
@@ -298,18 +396,21 @@ sb.capacity(); // return = 21 + length ==
 
 ```
 
-### character
-* The character syntax to declare char value is '#'
-* primitive
-* it had a wrapper class named Character
-* white space characters are not counted in fair data type.
+---
 
-### string
-* If you try to define multiple characters, we need it. An array of characters and each character will be stored. At different indexes.
-* non-primitive
-* characters are a collection of characters defined. refined under a single variable, and the location of the particular character can be retrieved using screen class methods. or a particular character, using free class methods. a particular character of a string can be accessed using string class methods.
-* white space characters are counted in string.
-* itself is a wrapper class which is used as a datatype also
+### Difference between Character and String
+
+| Character (char)              | String (java.lang.String)     |
+|-------------------------------|-------------------------------|
+| Primitive                     | Class                         |
+| 2 bytes                       | Variable (depends on content) |
+| `char c = 'a';`               | `String s = "hello";`         |
+| Single character              | Sequence of characters        |
+| `==` operator for compression | `.equals()` method            |
+| Direct access                 | Methods like `charAt()`       |
+| White space is ignored        | White space it not ignored    |
+| Has `Character` wrapper class | it self is a wrapper class    |
+
 ---
 
 ## Interface
@@ -335,17 +436,11 @@ interface {
 
 ### Difference Between Class and Interface
 
-#### Class
-* In class, you can instantiate variables and create an object.
-* A class can contain concrete (with implementation) methods
-* The access specifiers used with classes are private, protected, and public.
-
-
-#### Interface
-* In an interface, you can’t instantiate variables and create an object.
-* The interface cannot contain concrete (with implementation) methods.
-* In Interface, only one specifier is used — Public.
-
+| Class                                                                       | Interface                                                              |
+|-----------------------------------------------------------------------------|------------------------------------------------------------------------|
+| In class, you can instantiate variables and create an object.               | In an interface, you can’t instantiate variables and create an object. |
+| A class can contain concrete (with implementation) methods                  | The interface cannot contain concrete (with implementation) methods.   |
+| The access specifiers used with classes are private, protected, and public. | In Interface, only one specifier is used — Public.                     |
 
 ### Relationship Between Class and Interface
 
