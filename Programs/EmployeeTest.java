@@ -1,6 +1,5 @@
-class Employee{
-    String id,name; double monthly_salary;
-    Employee(){id="";name="";monthly_salary=0.0d;}
+class Employee{ String id,name; double monthly_salary;
+    Employee(){id=""; name=""; monthly_salary=0.0d;}
     void setId(String id){this.id = id;}
     String getId(){return id;}
     void setName(String name){this.name = name;}
@@ -9,7 +8,7 @@ class Employee{
     double getMonthly_salary(){return monthly_salary;}
     void displayEmployee(){System.out.println("id :"+id + " name :" + name + " salary |" + monthly_salary*12);}
 }
-public class EmployeeTest {
+class EmployeeTest {
     public static void main(String[] args) {
         Employee [] employee = new Employee[2];
         for(int i=0;i<2;i++){

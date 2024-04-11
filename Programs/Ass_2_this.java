@@ -1,4 +1,4 @@
-public class Ass_2_this {
+class Ass_2_this {
     String name; float c;
     Ass_2_this(String name, float c) {this(c); this.name = name; this.getName(); }
     Ass_2_this(float c) { this.c = c; }
