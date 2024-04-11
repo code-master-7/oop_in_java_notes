@@ -221,6 +221,166 @@ try {
         Printwriter pw = new Printwriter("abc.txt");
     }
 
+
+## Throw and Throws in Java:
+> Both `throw` and `throws` keywords in Java are crucial for exception handling, but they serve distinct purposes.
+Let's break down their functionalities:
+
+### Throw Keyword
+
+*   **Purpose:** Used to explicitly throw an exception within a method or block of code.
+*   **Syntax:**
+    ```
+    throw new ExceptionType("Optional message describing the exception");
+    
+    ```
+*   **Explanation:**
+
+    *   You can use `throw` with any throwable object (e.g., Exception, RuntimeException, or custom exception classes).
+    *   When an exception is thrown, the normal flow of execution stops, and the control is transferred to the nearest matching `catch` block in the call stack.
+    *   If no matching `catch` block is found, the program terminates abnormally.
+*   **Example:**
+
+```
+public void checkAge(int age) {
+if (age < 18) {
+throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+}
+// ... rest of the code ...
+}
+
+```
+
+In this example, if the `age` is less than 18,
+the `checkAge` method throws an `ArithmeticException` with a descriptive message.
+
+### Throws Keyword
+
+*   **Purpose:** Used in a method signature to declare the types of exceptions that the method might throw.
+*   **Syntax:**
+```
+returnType methodName(parameters) throws ExceptionType1, ExceptionType2 {
+// ... method body ...
+}
+
+```
+
+*   **Explanation:**
+    *   `throws` acts as a contract, informing the caller of the method about potential exceptions they need to handle.
+    *   If a checked exception (exceptions that are not subclasses of `RuntimeException`) is thrown within the method, it must be declared using `throws`.
+    *   Unchecked exceptions (subclasses of `RuntimeException`) do not need to be declared, but it can be helpful for documentation purposes. 
+* **Example:**
+```
+public void readFile(String fileName) throws IOException {
+    // Code to open and read the file...
+    // ... which might throw an IOException
+}
+```
+Here, `readFile` declares that it might throw an `IOException`.
+Any code calling `readFile` must either handle the exception using a `try-catch` block
+or further declare it using `throws` in its own signature.
+
+### Key Differences between Throw and Throws
+| Feature                  | Throw                                                                                                                                                                            | Throws                                                                                                                      |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+| **Purpose**              | To explicitly raise an exception at a specific point in the code.                                                                                                                | To signal that a method might throw an exception.                                                                           |
+| **Placement**            | Inside a method body.                                                                                                                                                            | In the method signature.                                                                                                    |
+| **Syntax**               | `throw new ExceptionType("Error message");`                                                                                                                                      | `returnType methodName(parameters) throws ExceptionType1, ExceptionType2, ...`                                              |
+| **Exception Handling**   | Requires a try-catch block to handle the exception within the same method or a throws declaration to propagate it to the calling method.                                         | Informs the calling method that it needs to handle the potential exception using a try-catch block or further propagate it. |
+| **Number of Exceptions** | Throws a single exception at a time.                                                                                                                                             | Can list multiple potential exception types.                                                                                |
+| **Example**              | > void readFile(String filename){<br/>if (filename == null) {<br/>throw new IllegalArgumentException("Filename cannot be null");<br/>}  <br/>  // Code to read the file...<br/>} | > void processFile(String filename) throws IOException {<br/> // May throw IOException <br/>}                               |
+
+### Choosing Between Throw and Throws
+
+*   Use `throw` when you want to explicitly stop the normal execution flow and handle an exceptional situation.
+*   Use `throws` to indicate potential exceptions that a method might throw but doesn't handle itself, delegating the responsibility to the calling code.
+
+> In conclusion, both `throw` and `throws` are essential for writing robust and maintainable Java code by effectively handling exceptions and providing clear information about potential error conditions.
+
+
+## User-Defined Exceptions in Java
+> In Java, you can create your own exception types by extending the `Exception` class or one of its subclasses.
+This allows you to define specific exceptions for your application, making error handling more precise and informative.
+
+### Defining a Custom Exception Class
+
+Here's the basic structure for defining a user-defined exception:
+
+```
+public class MyCustomException extends Exception {
+
+    // Constructor that calls the superclass constructor
+    public MyCustomException(String message) {
+        super(message);
+    }
+
+    // Optional: additional constructors or methods
+}
+
+```
+
+#### Explanation:
+
+*   **`MyCustomException`**: Replace this with the name of your exception class.
+*   **`extends Exception`**: This indicates that your class inherits from the `Exception` class, making it a checked exception. If you want to create an unchecked exception, extend `RuntimeException` instead.
+*   **Constructor**: You can define constructors to initialize the exception object with specific details, such as an error message.
+
+### Example:
+
+Let's create a custom exception called `InvalidAgeException` that will be thrown when an invalid age is entered
+(e.g., a negative age):
+
+```
+public class InvalidAgeException extends Exception {
+
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+```
+
+### Using the Custom Exception
+
+Now, let's use `InvalidAgeException` in a method that validates age:
+
+```
+public void checkAge(int age) throws InvalidAgeException {
+if (age < 0) {
+throw new InvalidAgeException("Age cannot be negative: " + age);
+}
+// ... rest of the code
+}
+
+```
+
+**Explanation:**
+
+1.  **`throws InvalidAgeException`**: This declaration indicates that the `checkAge` method might throw an `InvalidAgeException`.
+2.  **`throw new InvalidAgeException(...)`**: If the age is invalid (negative), we create a new `InvalidAgeException` object with an appropriate error message and throw it.
+
+### Handling the Exception
+
+When calling the `checkAge` method, you need to handle the potential `InvalidAgeException` using a `try-catch` block:
+
+```
+try {
+checkAge(-5);
+} catch (InvalidAgeException e) {
+System.err.println("Error: " + e.getMessage());
+}
+
+```
+
+This code will catch the `InvalidAgeException` and print the error message to the console.
+
+### Advantages of User-Defined Exceptions
+
+*   **Clarity**: They provide specific information about the type of error that occurred, making the code more readable and easier to debug.
+*   **Flexibility**: You can tailor exceptions to your application's needs, including adding custom fields or methods to hold relevant data.
+*   **Maintainability**: By defining specific exception types, you can centralize error handling logic and improve code organization.
+
+
 ---
 ## Access modifiers
 
@@ -346,7 +506,7 @@ int output = s.indexOf(“Share”); // returns 6
 
 ---
 
-### Difference between string vs StringBuffer
+### Difference between `String` vs `StringBuffer`
 | String                                                                                                                                                                        | String Buffer                                                                                                  |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
 | The string class objects are immutable.                                                                                                                                       | The string Buffer class objects are mutable.                                                                   |
@@ -483,17 +643,14 @@ class TestClass implements In1
         t.display();
     }
 }
-
-OUTPUT: 
-    hello
 ```
 
 ---
 
-## Instance of operator in Java
-* This operator returns either true or false and hence is majorly used in conditional statements
-* it is used to check whether a given object belongs to a particular class or not
-* an object of subclass is also an instanceof parent class
+## `instanceof` operator in Java
+* This operator returns either true or false and hence is majorly used in conditional statements.
+* it is used to check whether a given object belongs to a particular class or not.
+* an object of subclass is also an instanceof parent class.
 ``` 
 class Parent {
 }
