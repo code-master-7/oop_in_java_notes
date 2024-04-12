@@ -619,35 +619,32 @@ Java provides two primary ways to achieve abstraction:
 
 1. **Defining an abstract class:**
 
-```
-public abstract class Shape {
-public abstract double area();
-public abstract double perimeter();
+    ```
+    public abstract class Shape {
+    public abstract double area();
+    public abstract double perimeter();
+    
+           public void printInfo() {
+               System.out.println("This is a shape.");
+           }
+    }
+    ```
+2. **Creating concrete classes:**
 
-       public void printInfo() {
-           System.out.println("This is a shape.");
+    ```
+    public class Circle extends Shape {
+    private double radius;
+           // Constructor and other methods...
+           @Override
+           public double area() {
+               return Math.PI * radius * radius;
+           }
+           @Override
+           public double perimeter() {
+               return 2 * Math.PI * radius;
        }
-}
-```
-1. **Creating concrete classes:**
-
-```
-public class Circle extends Shape {
-private double radius;
-
-       // Constructor and other methods...
-
-       @Override
-       public double area() {
-           return Math.PI * radius * radius;
-       }
-
-       @Override
-       public double perimeter() {
-           return 2 * Math.PI * radius;
-       }
-}
-```
+    }
+    ```
 
 #### Interfaces:
 
