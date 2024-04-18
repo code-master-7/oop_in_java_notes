@@ -14,7 +14,7 @@
 | **Examples**         | C, FORTRAN                               | Java, C++, Python                                  |
 
 
-## Understanding the Java Ecosystem: JDK, JRE, and JVM
+## Understanding the Java Ecosystem: JDK, JRE, JVM and JIT
 
 ### Java Development Kit (JDK)
 
@@ -46,9 +46,14 @@
     *   **Security:** Provides a secure environment for running Java applications.
 *   **Who needs it?:** Developers don't directly interact with the JVM. It's automatically used when running Java applications through the JRE.
 
-### Relationship between JDK, JRE, and JVM
+### Just In Time Compiler (JIT)
+* The JVM includes a Just-In-Time compiler that dynamically translates bytecode into native machine code at runtime. This optimization process tailors the execution to the specific platform, enhancing performance while preserving platform independence.
+
+
+### Relationship between JDK, JRE, JVM and JIT
 *   **JDK:** Contains the JRE and additional development tools.
 *   **JRE:** Contains the JVM and core libraries needed to run Java applications.
+*   **JIT:** Convert java code to native Machine code
 *   **JVM:** The core component of the JRE that executes Java bytecode.
 
 ### Summary
