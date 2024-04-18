@@ -53,7 +53,7 @@
 ### Relationship between JDK, JRE, JVM and JIT
 *   **JDK:** Contains the JRE and additional development tools.
 *   **JRE:** Contains the JVM and core libraries needed to run Java applications.
-*   **JIT:** Convert java code to native Machine code
+*   **JIT:** Convert java code to native Machine code (Java Bytecode)
 *   **JVM:** The core component of the JRE that executes Java bytecode.
 
 ### Summary
