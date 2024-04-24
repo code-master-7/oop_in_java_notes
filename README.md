@@ -799,7 +799,7 @@ class Test {
 
 ---
 
-## ArrayList in Java: A Quick Overview
+## ArrayList
 
 **What is it?**
 
@@ -860,7 +860,31 @@ Use code with caution.
 * **Traditional arrays:** If you know the size of the collection beforehand and need optimal performance.
 * **LinkedList:** If you frequently add or remove elements from the beginning or middle of the collection.
 
-**Further learning:**
+**ArrayList Methods in Java**
 
-* Java Collections Framework documentation
-* ArrayList API documentation
+| **Method**                | **Description**                                                                                                                 |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| add(E element)            | Appends the specified element to the end of the list.                                                                           |
+| add(int index, E element) | Inserts the specified element at the specified position in the list.                                                            |
+| remove(int index)         | Removes the element at the specified position in the list.                                                                      |
+| remove(Object o)          | Removes the first occurrence of the specified element from the list, if it is present.                                          | 
+| set(int index, E element) | Replaces the element at the specified position in the list with the specified element.                                          |
+| get(int index)            | Returns the element at the specified position in the list.                                                                      |
+| size()                    | Returns the number of elements in the list.                                                                                     |
+| isEmpty()                 | Returns true if the list contains no elements.                                                                                  |
+| contains(Object o)        | Returns true if the list contains the specified element.                                                                        | 
+| clear()                   | Removes all of the elements from the list.                                                                                      |
+| indexOf(Object o)         | Returns the index of the first occurrence of the specified element in the list, or -1 if the list does not contain the element. |
+| lastIndexOf(Object o)     | Returns the index of the last occurrence of the specified element in the list, or -1 if the list does not contain the element.  | 
+
+
+## ArrayList vs. Array vs. LinkedList in Java
+
+| Feature                | ArrayList                                              | Array                                      | LinkedList                                               |
+|------------------------|--------------------------------------------------------|--------------------------------------------|----------------------------------------------------------|
+| **Data Structure**     | Dynamic array                                          | Fixed-size array                           | Doubly linked list                                       | 
+| **Resizing**           | Automatic                                              | Manual                                     | Automatic                                                |
+| **Element Access**     | O(1)                                                   | O(1)                                       | O(n)                                                     |
+| **Insertion/Deletion** | O(n) at the beginning or middle, O(1) at the end       | N/A                                        | O(1) at the beginning or end, O(n) in the middle         |
+| **Memory Usage**       | Less efficient due to potential resizing               | Most efficient                             | Less efficient due to extra memory needed for links      |
+| **Use Cases**          | Frequent access by index, adding/removing from the end | Fixed number of elements, efficient access | Frequent insertions/deletions at the beginning or middle |
