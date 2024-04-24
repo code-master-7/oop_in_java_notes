@@ -1,5 +1,4 @@
 public class QB_16_Palindrome {
-
     static boolean isPalindrome(int num){
         StringBuffer sb = new StringBuffer( String.valueOf(num));
         return String.valueOf(num).equals(String.valueOf(sb.reverse()));
