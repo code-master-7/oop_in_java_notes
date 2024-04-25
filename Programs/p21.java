@@ -2,7 +2,7 @@
 // if age < 18 then throw one exception with a message "Underage" if age > 50 then throw "Overage" message
 // otherwise display message "Thanks for registration" (use custom class constructor and super keyword print message)
 import java.util.Scanner;
-public class p21 {
+class p21 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int age = sc.nextInt();
@@ -15,9 +15,9 @@ public class p21 {
         }
     }
 }
-class Overage extends customException {
+class Overage extends Exception {
     Overage(String msg) {super(msg);}
 }
-class Underage extends customException {
+class Underage extends Exception {
     Underage(String msg) {super(msg);}
 }
