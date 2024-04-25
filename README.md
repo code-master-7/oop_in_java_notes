@@ -153,19 +153,15 @@ Final{
 #### Example:-
 
 ```
-class demo{
-public static void main(String[] args){
     int a=10 , b = 5 , c = 5;
     try{
        int x = a/(b-c);
     }
     catch(arithmeticexception e){
-       sout("divide by zero .");
+       System.out.println("divide by zero .");
     }
        int y = a/(b+c)
-       sout(y)
-    }
-}
+       System.out.println(y)
 ```
 So In Java Errors that cannot be handled by the user or programmer
 
@@ -219,7 +215,7 @@ We can handle check exceptions in two ways
 try {
     Printwriter pw = new Printwriter("abc.txt");
 }catch(FilenotfoundException e){
-    sout("File Not Found.."+e.getMessage());
+    System.out.println("File Not Found.."+e.getMessage());
 }
 ```
 
@@ -686,6 +682,104 @@ Java provides two primary ways to achieve abstraction:
 * **Use an abstract class:** When you want to share some implementation details and there is a clear "is-a" relationship between the classes.
 * **Use an interface:** When you want to define a contract for behavior without specifying any implementation and there is a "can-do" relationship between the classes.
 
+
+---
+
+## ArrayList
+
+**What is it?**
+
+An ArrayList is a resizable array implementation in Java. It's part of the Java Collections Framework and is found in the `java.util` package.
+
+**Key Points:**
+
+* **Dynamic sizing:** Unlike traditional arrays, ArrayLists automatically grow in size as you add elements.
+* **Object storage:** ArrayLists store objects, so you need to use wrapper classes (like `Integer` for `int`) when storing primitive types.
+* **Index-based access:** Elements are accessed using their index, similar to arrays.
+* **Methods:** ArrayLists provide various methods for adding, removing, searching, and sorting elements.
+* **Synchronization:** ArrayList class is non Synchronized
+
+**Basic Usage:**
+
+```
+// Import this
+// import java.util.ArrayList;
+
+// Create an ArrayList of Strings
+ArrayList<String> names = new ArrayList<>();
+
+// Add elements
+names.add("Nimesh");
+names.add("Nims");
+
+// Access element at index 0
+String firstName = names.get(0); // "Nimesh"
+
+// Get the size of the ArrayList
+int size = names.size(); // 2
+
+// Remove the element at index 1
+names.remove(1);
+
+// Check if the ArrayList is empty
+boolean isEmpty = names.isEmpty(); // false
+Use code with caution.
+
+```
+**Advantages:**
+
+* **Flexibility:** Easily add or remove elements.
+* **Dynamic:** No need to predefine the size.
+* **Convenience:** Offers many built-in methods for managing elements.
+
+**Disadvantages:**
+
+* **Performance:** Can be slower than traditional arrays for certain operations (e.g., accessing elements by index).
+* **Type safety:** Requires using wrapper classes for primitive types.
+
+**When to use ArrayLists?**
+
+* When you need a collection that can dynamically resize.
+* When you need to frequently add or remove elements.
+* When you need to store objects of different types (using generics).
+
+**Alternatives:**
+
+* **Traditional arrays:** If you know the size of the collection beforehand and need optimal performance.
+* **LinkedList:** If you frequently add or remove elements from the beginning or middle of the collection.
+
+**ArrayList Methods in Java**
+
+| **Method**                | **Description**                                                                                                                 |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| add(E element)            | Appends the specified element to the end of the list.                                                                           |
+| add(int index, E element) | Inserts the specified element at the specified position in the list.                                                            |
+| remove(int index)         | Removes the element at the specified position in the list.                                                                      |
+| remove(Object o)          | Removes the first occurrence of the specified element from the list, if it is present.                                          | 
+| set(int index, E element) | Replaces the element at the specified position in the list with the specified element.                                          |
+| get(int index)            | Returns the element at the specified position in the list.                                                                      |
+| size()                    | Returns the number of elements in the list.                                                                                     |
+| isEmpty()                 | Returns true if the list contains no elements.                                                                                  |
+| contains(Object o)        | Returns true if the list contains the specified element.                                                                        | 
+| clear()                   | Removes all of the elements from the list.                                                                                      |
+| indexOf(Object o)         | Returns the index of the first occurrence of the specified element in the list, or -1 if the list does not contain the element. |
+| lastIndexOf(Object o)     | Returns the index of the last occurrence of the specified element in the list, or -1 if the list does not contain the element.  | 
+
+
+## ArrayList vs. Array vs. LinkedList in Java
+
+| Feature                | ArrayList                                              | Array                                      | LinkedList                                               |
+|------------------------|--------------------------------------------------------|--------------------------------------------|----------------------------------------------------------|
+| **Data Structure**     | Dynamic array                                          | Fixed-size array                           | Doubly linked list                                       | 
+| **Resizing**           | Automatic                                              | Manual                                     | Automatic                                                |
+| **Element Access**     | O(1)                                                   | O(1)                                       | O(n)                                                     |
+| **Insertion/Deletion** | O(n) at the beginning or middle, O(1) at the end       | N/A                                        | O(1) at the beginning or end, O(n) in the middle         |
+| **Memory Usage**       | Less efficient due to potential resizing               | Most efficient                             | Less efficient due to extra memory needed for links      |
+| **Use Cases**          | Frequent access by index, adding/removing from the end | Fixed number of elements, efficient access | Frequent insertions/deletions at the beginning or middle |
+
+
+Add collection and iteration class in it with for each loop
+
 ---
 
 ## Interface
@@ -797,94 +891,5 @@ class Test {
 }
 ```
 
----
+INHERITANCE
 
-## ArrayList
-
-**What is it?**
-
-An ArrayList is a resizable array implementation in Java. It's part of the Java Collections Framework and is found in the `java.util` package.
-
-**Key Points:**
-
-* **Dynamic sizing:** Unlike traditional arrays, ArrayLists automatically grow in size as you add elements.
-* **Object storage:** ArrayLists store objects, so you need to use wrapper classes (like `Integer` for `int`) when storing primitive types.
-* **Index-based access:** Elements are accessed using their index, similar to arrays.
-* **Methods:** ArrayLists provide various methods for adding, removing, searching, and sorting elements.
-
-**Basic Usage:**
-
-```
-import java.util.ArrayList;
-
-// Create an ArrayList of Strings
-ArrayList<String> names = new ArrayList<>();
-
-// Add elements
-names.add("Alice");
-names.add("Bob");
-
-// Access element at index 0
-String firstName = names.get(0); // "Alice"
-
-// Get the size of the ArrayList
-int size = names.size(); // 2
-
-// Remove the element at index 1
-names.remove(1);
-
-// Check if the ArrayList is empty
-boolean isEmpty = names.isEmpty(); // false
-Use code with caution.
-
-```
-**Advantages:**
-
-* **Flexibility:** Easily add or remove elements.
-* **Dynamic:** No need to predefine the size.
-* **Convenience:** Offers many built-in methods for managing elements.
-
-**Disadvantages:**
-
-* **Performance:** Can be slower than traditional arrays for certain operations (e.g., accessing elements by index).
-* **Type safety:** Requires using wrapper classes for primitive types.
-
-**When to use ArrayLists?**
-
-* When you need a collection that can dynamically resize.
-* When you need to frequently add or remove elements.
-* When you need to store objects of different types (using generics).
-
-**Alternatives:**
-
-* **Traditional arrays:** If you know the size of the collection beforehand and need optimal performance.
-* **LinkedList:** If you frequently add or remove elements from the beginning or middle of the collection.
-
-**ArrayList Methods in Java**
-
-| **Method**                | **Description**                                                                                                                 |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------|
-| add(E element)            | Appends the specified element to the end of the list.                                                                           |
-| add(int index, E element) | Inserts the specified element at the specified position in the list.                                                            |
-| remove(int index)         | Removes the element at the specified position in the list.                                                                      |
-| remove(Object o)          | Removes the first occurrence of the specified element from the list, if it is present.                                          | 
-| set(int index, E element) | Replaces the element at the specified position in the list with the specified element.                                          |
-| get(int index)            | Returns the element at the specified position in the list.                                                                      |
-| size()                    | Returns the number of elements in the list.                                                                                     |
-| isEmpty()                 | Returns true if the list contains no elements.                                                                                  |
-| contains(Object o)        | Returns true if the list contains the specified element.                                                                        | 
-| clear()                   | Removes all of the elements from the list.                                                                                      |
-| indexOf(Object o)         | Returns the index of the first occurrence of the specified element in the list, or -1 if the list does not contain the element. |
-| lastIndexOf(Object o)     | Returns the index of the last occurrence of the specified element in the list, or -1 if the list does not contain the element.  | 
-
-
-## ArrayList vs. Array vs. LinkedList in Java
-
-| Feature                | ArrayList                                              | Array                                      | LinkedList                                               |
-|------------------------|--------------------------------------------------------|--------------------------------------------|----------------------------------------------------------|
-| **Data Structure**     | Dynamic array                                          | Fixed-size array                           | Doubly linked list                                       | 
-| **Resizing**           | Automatic                                              | Manual                                     | Automatic                                                |
-| **Element Access**     | O(1)                                                   | O(1)                                       | O(n)                                                     |
-| **Insertion/Deletion** | O(n) at the beginning or middle, O(1) at the end       | N/A                                        | O(1) at the beginning or end, O(n) in the middle         |
-| **Memory Usage**       | Less efficient due to potential resizing               | Most efficient                             | Less efficient due to extra memory needed for links      |
-| **Use Cases**          | Frequent access by index, adding/removing from the end | Fixed number of elements, efficient access | Frequent insertions/deletions at the beginning or middle |
