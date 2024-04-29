@@ -723,7 +723,7 @@ names.remove(1);
 
 // Check if the ArrayList is empty
 boolean isEmpty = names.isEmpty(); // false
-Use code with caution.
+
 
 ```
 **Advantages:**
@@ -891,5 +891,83 @@ class Test {
 }
 ```
 
-INHERITANCE
+---
+
+## Inheritance 
+
+### Introduction
+
+Inheritance is a fundamental concept in object-oriented programming (OOP) that allows you to create new classes (subclasses) based on existing ones (superclasses). This promotes code reusability and a hierarchical structure, where subclasses inherit the properties and methods of their superclasses, while also adding their own unique features.
+
+### Key Terminology
+
+* **Superclass/Parent Class:** The class from which another class inherits.
+* **Subclass/Child Class:** The class that inherits from a superclass.
+* **Extends Keyword:** Used to indicate that a subclass inherits from a superclass.
+* **IS-A Relationship:** A subclass IS-A type of its superclass.
+
+### Syntax
+
+```
+class Subclass extends Superclass {
+// Subclass members
+}
+```
+
+### Example
+
+```
+// Superclass (Parent Class)
+class Animal {
+String name;
+
+    void eat() {
+        System.out.println(name + " is eating.");
+    }
+}
+
+// Subclass (Child Class)
+class Dog extends Animal {
+void bark() {
+System.out.println(name + " is barking.");
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+Dog myDog = new Dog();
+myDog.name = "Buddy";
+myDog.eat();  // Inherited from Animal class
+myDog.bark(); // Specific to Dog class
+}
+}
+```
+
+**Output:**
+
+```
+Buddy is eating.
+Buddy is barking.
+```
+
+### Types of Inheritance
+
+* **Single Inheritance:** A subclass inherits from only one superclass. (e.g., Dog inherits from Animal)
+* **Multilevel Inheritance:** A subclass inherits from a superclass, which in turn inherits from another superclass, creating a hierarchy. (e.g., BabyDog inherits from Dog, which inherits from Animal)
+* **Hierarchical Inheritance:** Multiple subclasses inherit from a single superclass. (e.g., Dog and Cat both inherit from Animal)
+* **Note:** Java does not support multiple inheritance (a subclass inheriting directly from multiple superclasses) to avoid ambiguity and complexity.
+
+### Advantages of Inheritance
+
+* **Code Reusability:** Avoids code duplication by inheriting members from the superclass.
+* **Extensibility:** Easily extend existing functionality by creating subclasses with additional features.
+* **Maintainability:** Changes made to the superclass automatically reflect in subclasses, making code easier to maintain.
+
+### Important Points
+
+* **Constructors:** Subclasses do not inherit constructors from superclasses. You need to explicitly call the superclass constructor using `super()` within the subclass constructor.
+* **Method Overriding:** Subclasses can override inherited methods to provide their own implementation.
+* **Access Modifiers:** Inheritance rules apply to access modifiers (`private`, `protected`, `public`).
+
+![typesOfInheritanceInJava.jpg](typesOfInheritanceInJava.jpg)
 
