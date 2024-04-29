@@ -957,6 +957,8 @@ Buddy is barking.
 * **Hierarchical Inheritance:** Multiple subclasses inherit from a single superclass. (e.g., Dog and Cat both inherit from Animal)
 * **Note:** Java does not support multiple inheritance (a subclass inheriting directly from multiple superclasses) to avoid ambiguity and complexity.
 
+![typesOfInheritanceInJava.jpg](typesOfInheritanceInJava.jpg)
+
 ### Advantages of Inheritance
 
 * **Code Reusability:** Avoids code duplication by inheriting members from the superclass.
@@ -969,5 +971,4 @@ Buddy is barking.
 * **Method Overriding:** Subclasses can override inherited methods to provide their own implementation.
 * **Access Modifiers:** Inheritance rules apply to access modifiers (`private`, `protected`, `public`).
 
-![typesOfInheritanceInJava.jpg](typesOfInheritanceInJava.jpg)
 
