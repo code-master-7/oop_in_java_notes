@@ -762,12 +762,86 @@ String breed;
 
 In this example, the `Dog` class extends the `Animal` class. The `Dog` constructor uses `super(name)` to call the `Animal` constructor and initialize the `name` field. The `printInfo()` method in `Dog` uses `super.name` to access the inherited `name` field and `super.makeSound()` to call the `makeSound()` method from the `Animal` class.
 
-***
-
 **Remember:** The `super` keyword is a powerful tool for leveraging inheritance in Java, allowing you to build upon the functionality of existing classes and create more complex and flexible class hierarchies.
 
 
 ---
+
+## Final Keyword
+
+The `final` keyword in Java is a powerful tool that brings immutability and control to your code. It can be applied to different entities, each with specific implications:
+
+**1. Final Variables:**
+
+*   **Value cannot be changed once initialized:** This creates constants, ensuring their values remain fixed throughout the program execution.
+*   **Initialization:** Must be done either during declaration or within the constructor (for non-static variables).
+*   **Benefits:**
+    *   **Improved code readability:** Clearly indicates values that won't change.
+    *   **Enhanced security:** Prevents accidental modification of critical values.
+    *   **Thread safety:** Final variables are inherently thread-safe.
+
+**Example:**
+
+```
+final double PI = 3.14159; // Constant declaration and initialization
+
+class Circle {
+final double radius;
+
+    Circle(double radius) {
+        this.radius = radius; // Initialization in constructor
+    }
+}
+```
+
+**2. Final Methods:**
+
+*   **Cannot be overridden by subclasses:** This preserves the intended behavior of the method across the inheritance hierarchy.
+*   **Benefits:**
+    *   **Guarantees specific functionality:** Ensures subclasses adhere to the designed behavior of the method.
+    *   **Optimization potential:** The compiler may perform optimizations knowing the method won't be overridden.
+
+**Example:**
+
+```
+class Shape {
+public final double area() {
+// Implementation to calculate area
+}
+}
+
+class Square extends Shape {
+// Cannot override area() method
+}
+```
+
+**3. Final Classes:**
+
+*   **Cannot be extended or subclassed:** Prevents inheritance, solidifying the class design.
+*   **Benefits:**
+    *   **Security and design control:** Restricts unintended extensions that might compromise the class's intended purpose.
+*   **Considerations:** All methods within a final class are implicitly final.
+
+**Example:**
+
+```
+final class MathUtils {
+// Utility methods for mathematical operations
+}
+
+// Cannot create a subclass of MathUtils
+```
+
+**Key Points:**
+
+*   **Immutability:** Final variables and references to objects cannot be changed, but the objects themselves may be mutable.
+*   **Static final:** Combines `static` and `final` to create constants associated with the class itself, accessible directly using the class name.
+*   **Blank final:** Variables declared as `final` but not initialized during declaration. They must be initialized within the constructor.
+
+**In conclusion, the `final` keyword promotes code clarity, safety, and efficiency. Use it strategically to define constants, prevent unintended modifications, and ensure design integrity in your Java programs.**
+
+---
+
 
 ## ArrayList
 
