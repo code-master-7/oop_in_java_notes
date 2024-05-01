@@ -685,9 +685,7 @@ Java provides two primary ways to achieve abstraction:
 
 ---
 
-## Super Keyword in Java: Explained
-
-***
+## Super Keyword
 
 The `super` keyword in Java acts as a reference to the parent class (superclass) of the current class. It allows you to access members (fields, methods, and constructors) of the parent class from within the child class (subclass). This is particularly useful when:
 
