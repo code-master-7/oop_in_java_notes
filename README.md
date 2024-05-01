@@ -685,6 +685,92 @@ Java provides two primary ways to achieve abstraction:
 
 ---
 
+## Super Keyword in Java: Explained
+
+***
+
+The `super` keyword in Java acts as a reference to the parent class (superclass) of the current class. It allows you to access members (fields, methods, and constructors) of the parent class from within the child class (subclass). This is particularly useful when:
+
+*   **Accessing hidden members:** If a child class declares a member with the same name as a member in the parent class, the child class's member "hides" the parent's member. You can use `super` to access the hidden member of the parent class.
+*   **Calling parent class methods:** You can use `super` to explicitly call a method from the parent class, even if the child class has overridden that method.
+*   **Invoking parent class constructors:** Within a child class constructor, you can use `super` to invoke a specific constructor of the parent class, ensuring proper initialization of inherited members.
+
+### Syntax and Usage:
+
+There are three main ways to use the `super` keyword in Java:
+
+**1. Accessing Superclass Members:**
+
+```
+super.memberName
+```
+
+*   Replace `memberName` with the specific field or method you want to access from the parent class.
+
+**2. Calling Superclass Methods:**
+
+```
+super.methodName(arguments);
+```
+
+*   Replace `methodName` with the name of the parent class method you want to call.
+*   Include `arguments` if the method requires any parameters.
+
+**3. Invoking Superclass Constructors:**
+
+```
+super(arguments);
+```
+
+*   This statement must be the first line within the child class constructor.
+*   Replace `arguments` with the values required by the parent class constructor you want to invoke.
+
+### Example:
+
+```
+class Animal {
+String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+    
+    void makeSound() {
+        System.out.println("Generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+String breed;
+
+    Dog(String name, String breed) {
+        super(name); // Calls Animal's constructor to set name
+        this.breed = breed;
+    }
+    
+    @Override
+    void makeSound() {
+        System.out.println("Woof!");
+    }
+    
+    void printInfo() {
+        System.out.println("Name: " + super.name); // Accesses name from Animal
+        System.out.println("Breed: " + breed);
+        super.makeSound(); // Calls Animal's makeSound() method
+    }
+}
+
+```
+
+In this example, the `Dog` class extends the `Animal` class. The `Dog` constructor uses `super(name)` to call the `Animal` constructor and initialize the `name` field. The `printInfo()` method in `Dog` uses `super.name` to access the inherited `name` field and `super.makeSound()` to call the `makeSound()` method from the `Animal` class.
+
+***
+
+**Remember:** The `super` keyword is a powerful tool for leveraging inheritance in Java, allowing you to build upon the functionality of existing classes and create more complex and flexible class hierarchies.
+
+
+---
+
 ## ArrayList
 
 **What is it?**
@@ -955,7 +1041,7 @@ Buddy is barking.
 * **Single Inheritance:** A subclass inherits from only one superclass. (e.g., Dog inherits from Animal)
 * **Multilevel Inheritance:** A subclass inherits from a superclass, which in turn inherits from another superclass, creating a hierarchy. (e.g., BabyDog inherits from Dog, which inherits from Animal)
 * **Hierarchical Inheritance:** Multiple subclasses inherit from a single superclass. (e.g., Dog and Cat both inherit from Animal)
-* **Note:** Java does not support multiple inheritance (a subclass inheriting directly from multiple superclasses) to avoid ambiguity and complexity.
+* > **Note:** Java does not support multiple inheritance (a subclass inheriting directly from multiple superclasses) to avoid ambiguity and complexity.
 
 ![typesOfInheritanceInJava.jpg](typesOfInheritanceInJava.jpg)
 
