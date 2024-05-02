@@ -4,7 +4,7 @@
 import java.io.IOException;
 import java.util.Scanner;
 
-public class p22 {
+class p22 {
     static void divide(int a, int b) {
         try {
             if (b == 0) {
