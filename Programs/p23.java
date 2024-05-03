@@ -5,7 +5,7 @@ interface circle {
 interface square {
     default void print(int l,int m){ System.out.println(l*m); }
 }
-public class p23 implements circle, square {
+class p23 implements circle, square {
     public static void main(String[] args) {
         p23 pObj = new p23();
         pObj.print(2);

@@ -1129,4 +1129,66 @@ Buddy is barking.
 * **Method Overriding:** Subclasses can override inherited methods to provide their own implementation.
 * **Access Modifiers:** Inheritance rules apply to access modifiers (`private`, `protected`, `public`).
 
+---
+## Polymorphism
 
+Polymorphism, a core concept in object-oriented programming (OOP), allows objects of different classes to be treated as objects of a common superclass. This enables flexibility and code reusability. In Java, polymorphism is achieved through two main mechanisms:
+
+**1. Method Overriding:**
+
+*   **Definition:** When a subclass provides a specific implementation of a method already defined in its superclass, it's called method overriding.
+*   **Condition:** The method in the subclass must have the same name, return type, and parameters as the method in the superclass.
+*   **Benefits:**
+    *   **Specialization:** Subclasses can tailor the method's behavior to their specific needs while maintaining the general contract defined in the superclass.
+    *   **Flexibility:** Code interacting with the superclass can seamlessly work with objects of subclasses, adapting to their specific implementations.
+
+**2. Method Overloading:**
+
+*   **Definition:** Within the same class, you can define multiple methods with the same name but different parameters (number or type). This is method overloading.
+*   **Condition:** The methods must have different method signatures (the combination of the method name and parameter types).
+*   **Benefits:**
+    *   **Readability:** You can provide different ways to perform similar actions with varying inputs, making the code more readable and intuitive.
+    *   **Flexibility:** The appropriate method is chosen at compile time based on the arguments provided, allowing for versatile usage.
+
+**Example:**
+
+```
+class Animal {
+public void makeSound() {
+System.out.println("Generic animal sound");
+}
+}
+
+class Dog extends Animal {
+@Override
+public void makeSound() {
+System.out.println("Woof!");
+}
+}
+
+class Cat extends Animal {
+@Override
+public void makeSound() {
+System.out.println("Meow!");
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+Animal animal1 = new Dog();
+Animal animal2 = new Cat();
+animal1.makeSound(); // Output: Woof!
+animal2.makeSound(); // Output: Meow!
+}
+}
+```
+
+In this example, both `Dog` and `Cat` classes override the `makeSound()` method from the `Animal` class, providing their own specific implementations. The `main` method demonstrates polymorphism by treating both `Dog` and `Cat` objects as `Animal` objects, calling the appropriate `makeSound()` method at runtime based on the actual object type.
+
+**Benefits of Polymorphism:**
+
+*   **Code Reusability:** Reduces code duplication by allowing subclasses to inherit and extend functionality.
+*   **Flexibility and Extensibility:** Makes code adaptable to future changes and additions of new subclasses.
+*   **Loose Coupling:** Reduces dependencies between classes, promoting modularity and maintainability.
+
+**In conclusion, polymorphism is a powerful tool in Java that allows for flexible and reusable code by treating objects of different classes in a unified manner.**
