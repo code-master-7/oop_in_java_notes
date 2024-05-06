@@ -1198,9 +1198,24 @@ public class polyTest extends Dog_1 {
     }
 }
 
-
 // OUTPUT woof!
 ```
+
+
+***Static vs. Dynamic Polymorphism in Java***
+
+
+| Feature        | Static Polymorphism (Compile-time)                     | Dynamic Polymorphism (Runtime)                                                       |
+|----------------|--------------------------------------------------------|--------------------------------------------------------------------------------------|
+| **Mechanism**  | Method Overloading                                     | Method Overriding                                                                    |
+| **Binding**    | Early Binding (at compile time)                        | Late Binding (at runtime)                                                            |
+| **Resolution** | Based on reference type and arguments                  | Based on object type                                                                 |
+| **Example**    | Different `println()` methods for different data types | A `Dog` object overriding the `makeSound()` method inherited from the `Animal` class |
+
+
+
+
+
 
 **Benefits of Polymorphism:**
 
@@ -1209,4 +1224,4 @@ public class polyTest extends Dog_1 {
 *   **Extensibility:** Easily add new subclasses with specific behavior without modifying existing code.
 
 
-**In essence, polymorphism enables you to write more generic, adaptable, and maintainable code, adhering to the "one interface, multiple implementations" principle.** 
+**In essence, polymorphism enables you to write more generic, adaptable, and maintainable code, adhering to the "one interface, multiple implementations" principle.**
