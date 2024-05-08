@@ -1258,7 +1258,7 @@ This document delves into the various layers and their functionalities.
 
 *   **Stage:** Represents the main window of your application. It handles essential tasks like window size, title, and visibility.
 *   **Scene:** Holds the visual content of your application. It contains all the nodes, including UI elements and shapes, arranged in a hierarchical structure.
-* **Node:** Elements in a stage are known as node of stage ex: button in an application.
+* **Node/Scene graph:** Elements in a stage are known as node of stage ex: button in an application.
 
 ### **2. Scene Graph:** Organizing the Visual Elements
 
