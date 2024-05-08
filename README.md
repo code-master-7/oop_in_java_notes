@@ -1423,6 +1423,38 @@ stackPane.getChildren().addAll(new ImageView(image), new Label("Image Caption"))
 // Label overlaid on the image
 ```
 
+**6. AnchorPane**
+
+* AnchorPane allows you to anchor child nodes to the top, bottom, left, right, or center of the pane itself or to other nodes within the pane. This provides precise control over positioning and is ideal for creating complex, responsive layouts.
+
+```
+AnchorPane anchorPane = new AnchorPane();
+
+Button button1 = new Button("Top Left");
+AnchorPane.setTopAnchor(button1, 10.0);
+AnchorPane.setLeftAnchor(button1, 10.0);
+
+Button button2 = new Button("Bottom Right");
+AnchorPane.setBottomAnchor(button2, 10.0);
+AnchorPane.setRightAnchor(button2, 10.0);
+
+anchorPane.getChildren().addAll(button1, button2);
+```
+
+***6. TilePane***
+
+* TilePane arranges its child nodes in a grid-like structure, either horizontally or vertically. It's well-suited for creating uniform layouts like image galleries or menus.
+
+```
+TilePane tilePane = new TilePane();
+tilePane.setPrefColumns(3); // Set 3 columns
+
+for (int i = 1; i <= 9; i++) {
+    Button button = new Button("Button " + i);
+    tilePane.getChildren().add(button);
+}
+```
+
 **Additional Tips:**
 
 * **Padding and Margins:** Use `setPadding` and `setMargin` to control spacing around and within nodes.
@@ -1435,3 +1467,175 @@ stackPane.getChildren().addAll(new ImageView(image), new Label("Image Caption"))
 The choice of layout depends on your desired UI structure and the behavior you want to achieve.
 Consider the arrangement of elements, responsiveness,
 and flexibility required when selecting the appropriate layout for your JavaFX application. 
+
+
+## JavaFX Controls: A Comprehensive Guide
+
+This document provides an overview of essential controls in JavaFX,
+along with examples in Markdown format for easy integration into your projects.
+
+**Note:** These examples assume basic familiarity with JavaFX and Scene Builder.
+
+---
+
+### 1. Label
+
+**Purpose:** Displays read-only text.
+
+**Example:**
+
+```
+Label label = new Label("Hello, World!");
+
+```
+
+**Output:**
+
+Hello, World!
+
+---
+
+### 2. Button
+
+**Purpose:** Triggers an action when clicked.
+
+**Example:**
+
+```
+Button button = new Button("Click Me");
+button.setOnAction(e -> {
+System.out.println("Button clicked!");
+});
+
+```
+
+**Output:** A button labeled "Click Me" that prints a message to the console when clicked.
+
+--- 
+
+### 3. TextField
+
+**Purpose:** Allows user input of a single line of text.
+
+**Example:**
+
+```
+TextField textField = new TextField("Enter text here");
+
+```
+
+**Output:** A text field with the initial text "Enter text here", allowing users to type and edit text.
+
+---
+
+### 4. TextArea
+
+**Purpose:** Allows user input of multiple lines of text.
+
+**Example:**
+
+```
+TextArea textArea = new TextArea("Enter multiple lines here");
+
+```
+
+**Output:** A text area with the initial text "Enter multiple lines here", allowing users to input and edit multiple lines of text.
+
+---
+
+### 5. CheckBox
+
+**Purpose:** Represents a binary choice (selected or not selected).
+
+**Example:**
+
+```
+CheckBox checkBox = new CheckBox("I agree to the terms");
+
+```
+
+**Output:** A checkbox with the label "I agree to the terms", which can be checked or unchecked.
+
+---
+
+### 6. RadioButton
+
+**Purpose:** Represents a choice within a group of options (only one can be selected at a time).
+
+**Example:**
+
+```
+ToggleGroup group = new ToggleGroup();
+RadioButton option1 = new RadioButton("Option 1");
+option1.setToggleGroup(group);
+RadioButton option2 = new RadioButton("Option 2");
+option2.setToggleGroup(group);
+
+```
+
+**Output:** Two radio buttons labeled "Option 1" and "Option 2", where only one can be selected at a time due to being in the same ToggleGroup.
+
+---
+
+### 7. ChoiceBox
+
+**Purpose:** Provides a dropdown list of options for the user to select.
+
+**Example:**
+
+```
+ChoiceBox<String> choiceBox = new ChoiceBox<>();
+choiceBox.getItems().addAll("Choice A", "Choice B", "Choice C");
+
+```
+
+**Output:** A dropdown menu displaying "Choice A", "Choice B", and "Choice C", allowing the user to select one option.
+
+---
+
+### 8. ListView
+
+**Purpose:** Displays a list of items that can be selected.
+
+**Example:**
+
+```
+ListView<String> listView = new ListView<>();
+listView.getItems().addAll("Item 1", "Item 2", "Item 3");
+
+```
+
+**Output:** A list displaying "Item 1", "Item 2", and "Item 3", where users can select one or more items.
+
+---
+
+### 9. ImageView
+
+**Purpose:** Displays an image.
+
+**Example:**
+
+```
+Image image = new Image("path/to/image.png");
+ImageView imageView = new ImageView(image);
+
+```
+
+**Output:** An image displayed on the UI, loaded from the specified path.
+
+---
+
+### 10. DatePicker
+
+**Purpose:** Allows the user to select a date.
+
+**Example:**
+
+```
+DatePicker datePicker = new DatePicker();
+
+```
+
+**Output:** A calendar interface where users can select a specific date.
+
+---
