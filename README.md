@@ -1304,5 +1304,81 @@ This document delves into the various layers and their functionalities.
 *   **Efficiency:** The architecture is designed for optimal performance, especially with hardware acceleration.
 
 
+## JavaFX Scene Graph
+
+JavaFX's applications present visual elements to users through a powerful concept called the **Scene Graph**.
+This hierarchical tree structure organizes all the visual components (nodes) within a scene,
+defining their relationships and rendering order.
+Understanding the scene graph is crucial for building dynamic and interactive user interfaces in JavaFX.
+
+### Key Components of the Scene Graph
+
+* **Root Node:** The top-most node in the hierarchy. It acts as a container for all other nodes in the scene. Typically, it's a `Stage` object, representing the application window.
+* **Branches and Nodes:** Each element within the scene, such as shapes, controls, containers, and media objects, is represented by a `Node`. Nodes can have parent-child relationships, creating branches within the tree.
+* **Leaf Nodes:** Nodes at the end of a branch with no children are called leaf nodes. These are the individual visual elements like rectangles, circles, or text displayed on the screen.
+
+### Properties and Transformations
+
+* **Properties:** Each node possesses various properties like position, size, color, opacity, etc. These properties define the appearance and behavior of the node.
+* **Transformations:** Nodes can be transformed using translation, rotation, scaling, and shearing, allowing you to manipulate their position, orientation, and size within the scene.
+
+### Rendering Order and Z-order
+
+* **Rendering Order:** The scene graph determines the rendering order of nodes. Generally, parents are rendered before their children, and siblings are rendered in the order they appear in the tree.
+* **Z-order:** Controls the front-to-back ordering of nodes that overlap. Nodes with a higher Z-order appear in front of nodes with a lower Z-order.
+
+### Benefits of Scene Graph
+
+* **Organization:** Provides a clear structure for managing complex user interfaces.
+* **Efficiency:** Allows for optimized rendering and hit testing.
+* **Flexibility:** Enables easy manipulation of individual nodes or groups of nodes.
+* **Animation:** Facilitates smooth and efficient animations by applying transformations to nodes.
+
+### Common Node Types
+
+* **Shapes:** Basic geometric shapes like Circle, Rectangle, Ellipse, etc.
+* **Controls:** UI elements such as Button, Label, TextField, etc.
+* **Containers:** Group nodes together, such as Pane, VBox, HBox, etc.
+* **Media:** Nodes for displaying images, audio, and video.
+
+### Working with the Scene Graph
+
+JavaFX provides APIs to:
+
+* Add/remove nodes
+* Modify node properties and transformations
+* Traverse the scene graph
+* Apply effects and animations
+* Handle user input events
+
+![javafx-application-structure-scene-graph.png](javafx-application-structure-scene-graph.png)
+
+
+## Layouts in JavaFX: Organizing Your UI (.md)
+
+JavaFX provides a variety of layout panes, also known as containers, to help you structure and arrange the UI elements within your application. These panes determine the size and position of their children nodes, allowing you to create user interfaces that adapt to different screen sizes and resolutions.
+
+Here's a breakdown of some key layout panes in JavaFX:
+
+**Basic Layouts:**
+
+* **`HBox`**: Arranges children in a single horizontal row. You can adjust spacing between nodes and alignment.
+* **`VBox`**: Arranges children in a single vertical column. Similar to `HBox`, you can customize spacing and alignment.
+* **`StackPane`**: Stacks children on top of each other in the center. The order of children determines their z-order (which one is on top).
+* **`FlowPane`**: Arranges children in a flow, wrapping to the next line when necessary. Useful for creating dynamic layouts that adapt to the available space.
+* **`GridPane`**: Arranges children in a grid with rows and columns. Offers fine-grained control over node placement and spanning across multiple cells.
+* **`TilePane`**: Arranges children in uniformly sized tiles, similar to a grid but with automatic tile sizing.
+
+**Advanced Layouts:**
+
+* **`AnchorPane`**: Allows you to anchor children to the edges (top, bottom, left, right) or center of the pane. Great for precise positioning.
+* **`BorderPane`**: Divides the layout into five regions: top, bottom, left, right, and center. Ideal for creating typical application layouts with menus, toolbars, etc.
+
+**Key Concepts:**
+
+* **Sizing:**  Most layout panes automatically resize children based on the available space and layout rules. You can also set preferred, minimum, and maximum sizes for individual nodes.
+* **Spacing and Padding:** Control the gaps between nodes and the space around the edges of a pane.
+* **Alignment:** Determine how nodes are positioned within their allocated space (e.g., center, top-left, bottom-right).
+* **Constraints:**  Some layouts like `GridPane` allow setting specific row/column positions and spanning behavior for each child node.
 
 
