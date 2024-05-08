@@ -1353,32 +1353,85 @@ JavaFX provides APIs to:
 
 ![javafx-application-structure-scene-graph.png](javafx-application-structure-scene-graph.png)
 
+## Layouts in JavaFX: Structuring Your UI (.md format)
 
-## Layouts in JavaFX: Organizing Your UI (.md)
+JavaFX offers several layout panes, also known as containers, to arrange UI elements (nodes) within your application.
+These layouts manage the positioning and sizing of their children, providing flexibility and responsiveness.
+Here's a breakdown of common layouts with examples:
 
-JavaFX provides a variety of layout panes, also known as containers, to help you structure and arrange the UI elements within your application. These panes determine the size and position of their children nodes, allowing you to create user interfaces that adapt to different screen sizes and resolutions.
+**1. BorderPane:**
 
-Here's a breakdown of some key layout panes in JavaFX:
+* Divides the area into five regions: top, bottom, left, right, and center.
+* Ideal for creating main application layouts with menus, toolbars, status bars, and a central content area.
 
-**Basic Layouts:**
+```
+BorderPane borderPane = new BorderPane();
+borderPane.setTop(new Label("Top"));
+borderPane.setLeft(new Button("Left"));
+borderPane.setCenter(new TextArea("Center content"));
+borderPane.setRight(new ListView<>());
+borderPane.setBottom(new HBox(new Label("Status")));
+```
 
-* **`HBox`**: Arranges children in a single horizontal row. You can adjust spacing between nodes and alignment.
-* **`VBox`**: Arranges children in a single vertical column. Similar to `HBox`, you can customize spacing and alignment.
-* **`StackPane`**: Stacks children on top of each other in the center. The order of children determines their z-order (which one is on top).
-* **`FlowPane`**: Arranges children in a flow, wrapping to the next line when necessary. Useful for creating dynamic layouts that adapt to the available space.
-* **`GridPane`**: Arranges children in a grid with rows and columns. Offers fine-grained control over node placement and spanning across multiple cells.
-* **`TilePane`**: Arranges children in uniformly sized tiles, similar to a grid but with automatic tile sizing.
+**2. HBox and VBox:**
 
-**Advanced Layouts:**
+* **HBox:** Arranges nodes horizontally in a single row.
+* **VBox:** Arranges nodes vertically in a single column.
+* Useful for aligning elements in a specific direction.
 
-* **`AnchorPane`**: Allows you to anchor children to the edges (top, bottom, left, right) or center of the pane. Great for precise positioning.
-* **`BorderPane`**: Divides the layout into five regions: top, bottom, left, right, and center. Ideal for creating typical application layouts with menus, toolbars, etc.
+```
+// HBox Example
+HBox hbox = new HBox(10); // Spacing of 10px between elements
+hbox.getChildren().addAll(new Button("Button 1"), new Button("Button 2"));
 
-**Key Concepts:**
+// VBox Example
+VBox vbox = new VBox(5); // Spacing of 5px between elements
+vbox.getChildren().addAll(new Label("Label 1"), new Label("Label 2"));
+```
 
-* **Sizing:**  Most layout panes automatically resize children based on the available space and layout rules. You can also set preferred, minimum, and maximum sizes for individual nodes.
-* **Spacing and Padding:** Control the gaps between nodes and the space around the edges of a pane.
-* **Alignment:** Determine how nodes are positioned within their allocated space (e.g., center, top-left, bottom-right).
-* **Constraints:**  Some layouts like `GridPane` allow setting specific row/column positions and spanning behavior for each child node.
+**3. FlowPane:**
 
+* Arranges nodes in a row, wrapping to the next line when exceeding the width.
+* Suitable for creating dynamic layouts where the number of elements might change.
 
+```
+FlowPane flowPane = new FlowPane(Orientation.HORIZONTAL, 10, 10); // Horizontal flow with spacing
+flowPane.getChildren().addAll(new Button("Button 1"), new Button("Button 2"), new Button("Button 3"));
+```
+
+**4. GridPane:**
+
+* Arranges nodes in a grid structure with rows and columns.
+* Offers precise control over the placement of each element.
+
+```
+GridPane gridPane = new GridPane();
+gridPane.add(new Label("Username:"), 0, 0); // Column 0, Row 0
+gridPane.add(new TextField(), 1, 0); // Column 1, Row 0
+gridPane.add(new Label("Password:"), 0, 1); // Column 0, Row 1
+gridPane.add(new PasswordField(), 1, 1); // Column 1, Row 1
+```
+
+**5. StackPane:**
+
+* Stacks nodes on top of each other in the center.
+* Useful for layering elements or creating effects.
+
+```
+StackPane stackPane = new StackPane();
+stackPane.getChildren().addAll(new ImageView(image), new Label("Image Caption"));
+// Label overlaid on the image
+```
+
+**Additional Tips:**
+
+* **Padding and Margins:** Use `setPadding` and `setMargin` to control spacing around and within nodes.
+* **Alignment:** Set alignment properties like `setAlignment` for layouts and `setTextAlignment` for text controls.
+* **Constraints:** GridPane allows setting constraints like `columnSpan` and `rowSpan` for cell spanning.
+* **Nested Layouts:** Combine multiple layouts for complex UI structures.
+
+**Choosing the Right Layout:**
+
+The choice of layout depends on your desired UI structure and the behavior you want to achieve.
+Consider the arrangement of elements, responsiveness,
+and flexibility required when selecting the appropriate layout for your JavaFX application. 
