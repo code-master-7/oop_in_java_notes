@@ -1353,7 +1353,7 @@ JavaFX provides APIs to:
 
 ![javafx-application-structure-scene-graph.png](javafx-application-structure-scene-graph.png)
 
-## Layouts in JavaFX: Structuring Your UI (.md format)
+## Layouts in JavaFX: Structuring Your UI 
 
 JavaFX offers several layout panes, also known as containers, to arrange UI elements (nodes) within your application.
 These layouts manage the positioning and sizing of their children, providing flexibility and responsiveness.
