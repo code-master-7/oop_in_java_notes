@@ -21,13 +21,11 @@ class Rectangle extends shape{
     void calculateArea() { displayArea(l*h); }
 }
 
-public class p24 {
+class p24 {
     public static void main(String[] args) {
-        shape p ;
-        p = new Rectangle(2,5);
+        shape p = new Rectangle(2,5);
         p.calculateArea();
         p = new Circle1(2.1f);
         p.calculateArea();
-
     }
 }
