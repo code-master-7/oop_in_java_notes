@@ -13,7 +13,7 @@ class q implements p12 {
     public void p11() { System.out.println(b); }
     public void p() { System.out.println(d); }
 }
-public class p25 {
+class p25 {
     public static void main(String[] args) {
         q Q = new q();
         Q.p(); Q.p11(); Q.p22(); Q.p33();
