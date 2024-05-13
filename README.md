@@ -2152,9 +2152,71 @@ v
 
 This Markdown document provides a comprehensive explanation of the Java thread life cycle,
 covering the various states and transitions a thread can undergo.
+
+## Types of Threads
+
+There are two primary types of threads in Java:
+
+1. **User Threads**:
+    * These are threads created and managed by the application.
+    * Most threads in a Java application are user threads.
+    *  They can be created by:
+        * Extending the `Thread` class:
+
+```
+public class MyThread extends Thread {
+public void run() {
+// Code to execute in the thread
+}
+}
+```
+* Implementing the `Runnable` interface:
+
+```
+public class MyRunnable implements Runnable {
+public void run() {
+// Code to execute in the thread
+}
+}
+```
+
+1. **Daemon Threads**:
+    * These are low-priority threads that run in the background, providing services to user threads.
+    * They are typically used for tasks like garbage collection and other background maintenance operations.
+    * Daemon threads automatically terminate when all user threads have finished executing.
+    * To create a daemon thread, set the `daemon` flag to `true` before starting the thread:
+
+```
+Thread myThread = new Thread(new MyRunnable());
+myThread.setDaemon(true);
+myThread.start();
+```
+
+Here's a table summarizing the key differences:
+
+| Feature   | User Threads                                  | Daemon Threads                                               |
+|-----------|-----------------------------------------------|--------------------------------------------------------------|
+| Purpose   | Perform application-specific tasks            | Provide services to user threads                             |
+| Priority  | Can have any priority                         | Low priority                                                 |
+| Lifecycle | Terminate explicitly or upon task completion  | Terminate automatically when all user threads finish         |
+| Creation  | Extending `Thread` or implementing `Runnable` | Same as user threads, with `setDaemon(true)` before starting |
+
+## Understanding Thread States
+
+It's important to understand the different states a thread can be in:
+
+* **New:** A thread that has been created but not yet started.
+* **Runnable:** A thread that is ready to run but might be waiting for resources.
+* **Running:** A thread that is currently executed.
+* **Blocked/Waiting:** A thread that is waiting for a specific event, such as I/O or another thread.
+* **Terminated:** A thread that has completed its execution.
+
+Understanding these states helps in debugging and optimizing multithreaded applications.
+
+
 ---
 
-## Total Views
+# Total Views
 <div align="center">
   <img src="https://profile-counter.glitch.me/code-master-7/count.svg?"   alt="View Counter"/>
 </div>
