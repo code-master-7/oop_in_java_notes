@@ -1891,16 +1891,16 @@ This leads to more reusable and type-safe code.
 
 ```
 public class GenericClassName<T> {
-// T is the type parameter
-private T data;
+    // T is the type parameter
+    private T data;
 
-public GenericClassName(T data) {
-this.data = data;
-}
+    public GenericClassName(T data) {
+        this.data = data;
+    }
 
-public T getData() {
-return data;
-}
+    public T getData() {
+        return data;
+    }   
 }
 ```
 
@@ -1915,25 +1915,25 @@ Without generics, you'd need separate classes for a `StringBox`, `IntegerBox`, e
 
 ```
 public class Box<T> {
-private T item;
+    private T item;
 
-public Box(T item) {
-this.item = item;
-}
+    public Box(T item) {
+        this.item = item;
+    }
 
-public T getItem() {
-return item;
-}
+    public T getItem() {
+        return item;
+    }
 }
 
 public class Main {
-public static void main(String[] args) {
-Box<String> stringBox = new Box<>("Hello");
-String greeting = stringBox.getItem(); // greeting = "Hello"
+    public static void main(String[] args) {
+        Box<String> stringBox = new Box<>("Hello");
+        String greeting = stringBox.getItem(); // greeting = "Hello"
 
-      Box<Integer> integerBox = new Box<>(10);
-      int value = integerBox.getItem(); // value = 10
-}
+        Box<Integer> integerBox = new Box<>(10);
+        int value = integerBox.getItem(); // value = 10
+    }
 }
 ```
 
@@ -1953,26 +1953,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-public static void main(String[] args) {
-// Generic list of Strings
-List<String> names = new ArrayList<>();
-names.add("Alice");
-names.add("Bob");
+    public static void main(String[] args) {
+        // Generic list of Strings
+        List<String> names = new ArrayList<>();
+        names.add("Alice");
+        names.add("Bob");
 
-      // Generic list of Integers
-      List<Integer> numbers = new ArrayList<>();
-      numbers.add(1);
-      numbers.add(2);
+        // Generic list of Integers
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
 
-      // You can now work with these lists without worrying about casting 
-      for (String name : names) {
-          System.out.println(name); // No need to cast to String
-      }
+        // You can now work with these lists without worrying about casting 
+        for (String name : names) {
+            System.out.println(name); // No need to cast to String
+        }
 
-      for (Integer number : numbers) {
-          System.out.println(number); // No need to cast to Integer
-      }
-}
+        for (Integer number : numbers) {
+            System.out.println(number); // No need to cast to Integer
+        }
+    }
 }
 ```
 
@@ -1999,17 +1999,17 @@ There are two primary ways to create threads in Java:
 
 ```
 public class MyThread extends Thread {
-public void run() {
-// Code to be executed by the thread
-System.out.println("Running MyThread");
-}
+    public void run() {
+        // Code to be executed by the thread
+        System.out.println("Running MyThread");
+    }
 }
 
 public class Main {
-public static void main(String[] args) {
-MyThread thread = new MyThread();
-thread.start(); // Start the thread
-}
+    public static void main(String[] args) {
+        MyThread thread = new MyThread();
+        thread.start(); // Start the thread
+    }
 }
 ```
 
@@ -2023,17 +2023,17 @@ thread.start(); // Start the thread
 
 ```
 public class MyRunnable implements Runnable {
-public void run() {
-// Code to be executed by the thread
-System.out.println("Running MyRunnable");
-}
+    public void run() {
+        // Code to be executed by the thread
+        System.out.println("Running MyRunnable");
+    }
 }
 
 public class Main {
-public static void main(String[] args) {
-Thread thread = new Thread(new MyRunnable());
-thread.start(); // Start the thread
-}
+    public static void main(String[] args) {
+        Thread thread = new Thread(new MyRunnable());
+        thread.start(); // Start the thread
+    }
 }
 ```
 
@@ -2063,8 +2063,7 @@ Java provides mechanisms like `synchronized` blocks and methods, as well as lock
 
 ```
 public class Counter {
-private int count = 0;
-
+    private int count = 0;
     public synchronized void increment() {
         count++;
     }
@@ -2165,18 +2164,18 @@ There are two primary types of threads in Java:
 
 ```
 public class MyThread extends Thread {
-public void run() {
-// Code to execute in the thread
-}
+    public void run() {
+        // Code to execute in the thread
+    }
 }
 ```
 * Implementing the `Runnable` interface:
 
 ```
 public class MyRunnable implements Runnable {
-public void run() {
-// Code to execute in the thread
-}
+    public void run() {
+        // Code to execute in the thread
+    }
 }
 ```
 
@@ -2212,7 +2211,6 @@ It's important to understand the different states a thread can be in:
 * **Terminated:** A thread that has completed its execution.
 
 Understanding these states helps in debugging and optimizing multithreaded applications.
-
 
 ---
 
