@@ -1,29 +1,22 @@
 import java.util.Scanner;
 
 public class Min_Max {
-    public static int min(int[] arr){
-        int min=0;
-        for(int i=0;i< arr.length-1;i++){
-            min = i;
-            if(arr[min]>arr[i+1]){
-                min = arr[i+1];
-            }else {
-                min = arr[i];
-            }
+    static void print(int num){
+     System.out.println(num);
+   }
+       public static void min(int[] arr){
+        int min =arr[0];
+        for(int i=0;i< arr.length;i++){
+            if(arr[i] < min ) min = arr[i];
         }
-        return min;
+        print(min);
     }
-    public static int max(int[] arr){
-        int max=0;
-        for(int i=0;i< arr.length-1;i++){
-            max = i;
-            if(arr[max]<arr[i+1]){
-                max = arr[i+1];
-            }else {
-                max = arr[i];
-            }
+    public static void max(int[] arr){
+        int max=arr[0];
+        for(int i=0;i< arr.length;i++){
+            if(arr[i] > max ) max = arr[i];
         }
-        return max;
+        print(max);
     }
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
@@ -34,9 +27,7 @@ public class Min_Max {
             System.out.print("Enter "+i+" number :");
             arr[i]= sc.nextInt();
         }
-        int min = min(arr);
-        System.out.println("Maximum Element IS :"+min);
-        int max = max(arr);
-        System.out.println("Maximum Element IS :"+max);
+        min(arr);
+        max(arr);
     }
 }
