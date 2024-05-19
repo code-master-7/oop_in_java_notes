@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Min_Max {
+class Min_Max {
     static int len = 5;
     static int [] arr = {9,5,1,3,7} ;
     static void print(int num){ System.out.println(num); }
