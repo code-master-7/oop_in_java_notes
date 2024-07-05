@@ -14,7 +14,9 @@ public class HelloApplication extends Application {
     private static final String CORRECT_PASSWORD = "pass123";
 
     @Override
-    public void start(Stage primaryStage)  {
+    public void start(Stage primaryStage) {
+
+        // Nodes -------------------------------------------------------------------------------------------------------
 
         // Create labels for username and password fields.
         Label usernameLabel = new Label("Username:");
@@ -35,19 +37,25 @@ public class HelloApplication extends Application {
             String enteredUsername = usernameField.getText();
             String enteredPassword = passwordField.getText();
 
-            if (enteredUsername.equals(CORRECT_USERNAME) && enteredPassword.equals(CORRECT_PASSWORD)) {
+            if (enteredUsername.equals(CORRECT_USERNAME) && enteredPassword.equals(CORRECT_PASSWORD))
                 resultLabel.setText("Login successful!");
-            } else {
+            else
                 resultLabel.setText("Login failed. Please check your credentials.");
-            }
+
         });
+
+        // scene --------------------------------------------------------------------------------------------------------
 
         // Create a layout (VBox) to arrange the elements.
         VBox root = new VBox(10);
         root.getChildren().addAll(usernameLabel, usernameField, passwordLabel, passwordField, loginButton, resultLabel);
 
-        // Create the scene and set it in the stage.
+        // Create the scene.
         Scene scene = new Scene(root, 300, 200);
+
+        // Stage -------------------------------------------------------------------------------------------------------
+
+        // Set scene in the stage.
         primaryStage.setScene(scene);
 
         // Set the title of the window.
@@ -55,7 +63,7 @@ public class HelloApplication extends Application {
 
         // Show the window.
         primaryStage.show();
-        
+
     }
 
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class p17 {
+class p17 {
     int [] arr ;
     p17(int [] arr1){ arr = arr1; }
     static int getMin(p17 obj){ return Arrays.stream(obj.arr).min().getAsInt(); }
