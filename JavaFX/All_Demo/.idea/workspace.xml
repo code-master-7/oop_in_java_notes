@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4adb10e2-eb31-43c2-b41c-864c5cd79f79" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Nims_JavaFX/src/main/java/com/javafx/nims_javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Nims_JavaFX/src/main/java/com/javafx/nims_javafx/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Programs/p17.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programs/p17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../out/production/OOP/p17.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/OOP/p17.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/src/main/java/com/javafx/emi_calc/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/src/main/java/com/javafx/emi_calc/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI_Calc/src/main/resources/com/javafx/emi_calc/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

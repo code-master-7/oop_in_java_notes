@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="802de32a-3a42-4265-83da-f7452a6ec9e3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../EMI/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/src/main/java/com/javafx/emi/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/src/main/java/com/javafx/emi/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EMI/src/main/resources/com/javafx/emi/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../All_Demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../All_Demo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/javafx/nims_javafx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/javafx/nims_javafx/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Programs/p17.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Programs/p17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../out/production/OOP/p17.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/OOP/p17.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
